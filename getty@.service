@@ -1,0 +1,50 @@
+Ubuntu
+vi /lib/systemd/system/getty@.service
+
+RHEL
+/usr/lib/systemd/system/getty@.service
+/usr/bin/agetty instead of /sbin/agetty (UBUNTU)
+
+Method 1: 
+
+Before change (UBUNTU):
+
+[Service]
+# the VT is cleared by TTYVTDisallocate
+ExecStart=-/sbin/agetty --noclear %I $TERM
+#ExecStart=-/sbin/agetty --skip-login --login-options "-f root" %I 38400 linux
+
+After change:
+[Service]
+# the VT is cleared by TTYVTDisallocate
+#ExecStart=-/sbin/agetty --noclear %I $TERM
+ExecStart=-/sbin/agetty --skip-login --login-options "-f root" %I 38400 linux
+ExecStart=-/sbin/agetty -n -o "-f root" %I 38400 linux
+
+systemctl daemon-reload
+
+
+# https://superuser.com/questions/969923/automatic-root-login-in-debian-8-0-console-only 
+# You can edit the file /lib/systemd/system/getty@.service and change the line
+# ExecStart=-/sbin/agetty --noclear %I $TERM
+
+To
+
+# ExecStart=-/sbin/agetty --skip-login --login-options "-f root" %I 38400 linux
+# for auto login as root user
+# works and tested 2Oct18!!
+# systemctl daemon-reload
+
+RHEL74 – BEFORE CHANGE AND AFTER CHANGE
+[Service]
+# the VT is cleared by TTYVTDisallocate
+#ExecStart=-/sbin/agetty --noclear %I $TERM
+ExecStart=-/sbin/agetty --skip-login --login-options "-f root" %I 38400 linux
+
+
+Method 2: 
+# https://wiki.archlinux.org/index.php/Getty 
+#ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear %I $TERM
+# Michael
+ExecStart=-/sbin/agetty --autologin root --noclear %I $TERM
+
