@@ -2,6 +2,7 @@ less /etc/systemd/logind.conf
 vi +/HandleLid logind.conf /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 # https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/desktop_migration_and_administration_guide/closing-lid
+# https://www.dell.com/support/kbdoc/en-sg/000179566/how-to-disable-sleep-and-configure-lid-power-settings-for-ubuntu-or-red-hat-enterprise-linux-7
 # make sure the file /etc/systemd/logind.conf includes an uncommented line "HandleLidSwitch=ignore", 
 # and then just restart the systemd-logind service.
 # My logind.conf
