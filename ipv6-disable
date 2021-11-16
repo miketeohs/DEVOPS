@@ -1,0 +1,7 @@
+vi +/GRUB_CMDLINE_LINUX /etc/default/grub
+GRUB_CMDLINE_LINUX="crashkernel=auto resume=/dev/mapper/rhel-swap rd.lvm.lv=rhel/root rd.lvm.lv=rhel/swap ipv6.disable=1 rhgb quiet"
+grub2-mkconfig -o /boot/grub2/grub.cfg
+grubby --info=ALL | grep "^kernel"
+# To check
+ip a show enp0s25 or ip a show <eth0>
+
