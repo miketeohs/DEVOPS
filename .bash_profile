@@ -14,3 +14,4 @@ echo "Cut/Copy/Paste in tmux : https://www.rockyourcode.com/copy-and-paste-in-tm
 echo "CTRL+b, [ to begin copy mode, CTRL+SPACE,ALT+w or CTRL+w to copy into Tmux buffer, CTRL+b, ]"
 echo "Press Left Shift and right mouse to paste from the normal copy "
 #echo "Only Ubuntu - Press right mouse and Right SHIFT to hold the menu open"
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
