@@ -1,0 +1,1 @@
+ssh-keygen -c -C "my new comment" -f ~/.ssh/my_ssh_key
