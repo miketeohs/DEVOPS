@@ -1,0 +1,1 @@
+ssh-keygen -p -P oldpassphrase -N "" -f ~/.ssh/id_rsa
