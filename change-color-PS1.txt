@@ -1,0 +1,27 @@
+Colors are represented by color codes, some examples being,
+reset = 0,
+black = 30,
+red = 31,
+green = 32,
+yellow = 33,
+blue = 34,
+magenta = 35,
+cyan = 36, and
+white = 37.
+
+To print a colored text, enter the following command:
+    echo -e "\e[1;31m This is red text \e[0m"
+Here, \e[1;31m is the escape string that sets the color to red and \e[0m resets the color back. Replace 31 with the required color code.
+Michael export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+        export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+For a colored background,
+reset = 0,
+black = 40,
+red = 41,
+green = 42,
+yellow = 43,
+blue = 44,
+magenta = 45,
+cyan = 46, and
+white=47, are the color codes that are commonly used.
+To print a colored background, enter the following command: echo -e "\e[1;42m Green Background \e[0m"
