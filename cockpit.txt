@@ -1,0 +1,42 @@
+dnf install cockpit
+systemctl enable --now cockpit.socket
+sudo firewall-cmd --add-service=cockpit
+sudo firewall-cmd --add-service=cockpit --permanent
+
+https://cockpit-project.org/running
+
+OLINUX
+https://docs.oracle.com/en/operating-systems/oracle-linux/cockpit/cockpit-install_install_the_cockpit_package.html
+
+
+
+
+subscription-manager register --auto-attach --username=<rhnuser> --password=<rhnpasswd>
+subscription-manager repos --enable=rhel-7-server-extras-rpms
+subscription-manager repos --enable=rhel-7-server-optional-rpms
+
+ firewall-cmd --add-port=9090/tcp
+ firewall-cmd --permanent --add-port=9090/tcp
+
+ sudo yum install cockpit
+
+ sudo systemctl enable cockpit.socket
+sudo systemctl start cockpit.socket
+
+Open a web browser and enter the server’s IP address with port 9090 in the address bar. If the web browser is on the Cockpit server, open localhost:9090 or hostname:9090. If you get a security warning by the browser, you will need to add this connection to the security exceptions. Click Advanced  Add Exception  Confirm Security Exception.
+
+Cockpit now supports two-factor authentication so if you have protected your SSH server with such configuration, the Cockpit login screen will prompt you to enter your password and PIN pair. To set up SSH for two-factor authentication you need two components:
+
+Your company’s authenticator application that provides one-time passwords or PIN numbers. An example application is the Google Authenticator, which also has its own PAM (Pluggable Authentication Module).
+A server that validates the PINs from your dongle.
+These two components can be built in many different ways depending on the infrastructure of your particular company. When you have these two set up, you will need to do the following things:
+
+Enter the following line in the /etc/pam.d/sshd file as the last auth line:
+
+auth       required         <your_PAM_module>
+
+Edit the /etc/ssh/sshd_config file so that the ChallengeResponseAuthentication line is set to yes.
+Restart the sshd service with the systemctl restart shhd command.
+When you open Cockpit’s interface, and enter your password, you will then be prompted to enter your Verification code:
+
+

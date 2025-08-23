@@ -1,0 +1,15 @@
+https://superuser.com/questions/1094099/what-parameters-do-i-need-for-the-netsh-int-ip-set-dns-windows-command
+
+netsh int ipv4 set dns help
+
+netsh interface ipv4 add dnsserver "Ethernet" address=192.168.x.x index=1
+
+netsh interface ipv4 show dnsservers
+
+netsh interface ipv4 show config
+
+netsh wlan show interfaces
+
+
+netsh ? shows several context
+
