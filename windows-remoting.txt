@@ -1,0 +1,21 @@
+1. winrm get winrm/config/client # both server & clients for checking, c:\windows\system32\winrm.vbs
+2. winrm set winrm/config/client ‘@{TrustedHosts="192.168.1.75"}’    # executed at t430-w10 elevated once
+3. winrm set winrm/config/client ‘@{TrustedHosts="192.168.1.64"}’   # executed at vmware elevated once
+4. Set-WSManQuickConfig -force # both machines and elevated once,
+WinRM is already set up to receive requests on this computer.
+- get-netconnectionprofile to check           # NetConnection Module
+- Set-NetConnectionProfile -InterfaceAlias Ethernet1 -NetworkCategory "Private"
+5. Enter-pssession -ComputerName 192.168.1.75 -Credential 192.168.1.75\mteohs@hotmail.com
+6. Enter-pssession -ComputerName 192.168.1.75 -Credential 192.168.1.75\mteoh
+7. Enter-PSSession -ComputerName vmware -Credential vmware\mteoh   # failed because of IP?
+8. Invoke-Command -ComputerName 192.168.1.75 -ScriptBlock { Get-Process } -Credential 192.168.1.75\mteoh
+9. Invoke-Command -ComputerName vmware -ScriptBlock { Get-Process } -Credential vmware\mteoh # failed because of IP
+# verified on 20Jun25
+
+$mteoh=get-credential
+PowerShell credential request
+Enter your credentials.
+User: 192.168.1.75\mteoh
+Password for user 192.168.1.75\mteoh: *******
+Invoke-Command -ComputerName 192.168.1.75 -ScriptBlock { Get-Process } -Credential $mteoh
+
