@@ -1,0 +1,10 @@
+VERY GOOD by David Both
+https://opensource.com/article/20/5/systemd-units
+
+https://docs.fedoraproject.org/en-US/quick-docs/debug-systemd-problems/
+
+https://linux-audit.com/systemd/troubleshooting-a-failed-systemd-unit/
+
+https://linux-audit.com/systemd/troubleshooting-a-failed-systemd-unit/
+
+https://www.redhat.com/en/blog/systemd-automate-recovery

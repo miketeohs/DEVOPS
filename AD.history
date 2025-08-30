@@ -1,0 +1,372 @@
+timedatectl set-timezone Asia/Singapore
+hostnamectl set-hostname ubuntu2204-test.holland.local
+apt insall sssd sssd-client
+apt install sssd sssd-client
+apt install sssd
+systemctl restart sssd-pam.socket
+apt install  sssd-ad sssd-tools realmd adcli
+systemctl restart sssd-pam.socke
+systemctl restart sssd-pam.socket
+realm -v discover holland.local
+klist
+whereis packagekit
+apt-file search packagekit
+cd /etc/ssd
+cd /etc/sssd
+systemctl enable sssd
+systemctl start sssd
+systemctl status sssd
+authconfig --enablesssd -update
+adsys
+dpkg -l | grep sssd
+dpkg -l | grep realmd
+dpkg -l | grep adcli
+cd /etc
+vi krb5.conf 
+dpkg -l | grep krb5-user
+dpkg -l | grep sssd-krb5
+kinit michael
+dpkg -l | grep krb5-user
+apt-get install krb5-user
+kinit michael
+cd
+realm  join -v -U admin holland.local
+pam-auth-update
+id michael@holland.local
+realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common
+apt install -y realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common
+cd /usr/share/pam-configs/
+ls
+cat mkhomedir 
+bash -c "cat > /usr/share/pam-configs/mkhomedir" <<EOF
+Name: activate mkhomedir
+Default: yes
+Priority: 900
+Session-Type: Additional
+Session:
+        required                        pam_mkhomedir.so umask=0022 skel=/etc/skel
+EOF
+
+cat mkhomedir 
+pma-auth-update
+pam-auth-update
+systemctl restart sssd
+kinit -V admin@holland.local
+realm discover holland.local
+kinit -V admin@HOLLAND.LOCAL
+cd /etc/sssd/
+vi sssd.conf 
+systemctl restart sssd
+exit
+cd /etc/sssd/
+vi sssd.conf 
+systemctl restart sssd
+kinit -V admin@holland.local
+kinit -V admin@HOLLAND.LOCAL
+kinit -V michael@HOLLAND.LOCAL
+su michael@holland.local
+ssh -vvv michael@holland.local@192.168.1.82
+ip a
+ssh -vvv michael@holland.local@192.168.1.82
+exit
+cat /etc/sssd/sssd.conf 
+ls -lrt /etc/sssd/sssd.conf 
+cat /etc/sssd/sssd.conf 
+exit
+cp michael  michael@holland.local
+vi michael@holland.local 
+cd /etc/cloud/
+cat cloud.cfg
+ls -lrt /var/lib/cloud/
+ls -lR /var/lib/cloud/
+realm discover holland.local
+realm discover holland.local
+realm discover ad.holland.local
+realm discover dc.holland.local
+rpm -aq | grep mkhomedir
+dpkg -l | grep mkhomedir
+history | grep dig
+host -t SRV _kerberos._udp.holland.local.
+host -t SRV _kerberos._tcp.holland.local.
+cd ..
+cat krb5.conf 
+kinit admin@holland.local
+cat /etc/resolv.conf 
+cd resolvconf/
+ls
+cd resolv.conf.d/
+ls
+vi head 
+cat head 
+systemd-resolve --status
+systemd-resolved
+ps -ef |grep resolv
+systemctl status systemd-resolved
+systemctl restart systemd-resolved
+systemctl status systemd-resolved
+cat /etc/resolv.conf 
+kinit admin
+realm join -v -U admin holland.local
+pam-auth-update
+id michael@holland.local
+groups michael@holland.local
+groups yichian@holland.local
+cat /
+cat /etc/resolv.conf 
+systemd-resolve
+resolvconf -u
+cat /etc/resolv.conf 
+pam-auth-update
+exit
+pam-auth-update
+systemctl restart ssssd
+systemctl restart sssd
+kinit -V michael@holland.local
+kinit -V admin@holland.local
+kinit -V admin@HOLLAND.LOCAL
+kinit -V michael@HOLLAND.LOCAL
+realm discover holland.local
+cd /etc/sssd/
+vi sssd.conf 
+cd ../sudoers.d/
+ls
+ls -lrt
+vi michael@holland.local 
+systemctl restart sssd
+exit
+cd /var/log/
+ls
+ls -lrt
+cat /dev/null > lastlog
+ls
+ls -lrt
+tail -f auth.log
+cat /etc/sudoers.d/michael@holland.local 
+tail -f auth.log
+man sshd_config
+man ssh_config
+tail -f auth.log
+cd /etc/sudoers.d/
+cat michael
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+cd /usr/share/pam-configs/
+ls
+cat mkhomedir 
+cd /etc/sssd/
+vi sssd.conf 
+realm permit 
+realm permit yichian@holland.local
+realm permit michael@holland.local
+kinit -V michael@holland.local
+systemctl restart sshd
+pam-auth-update
+kinit -V michael@holland.local
+kinit -V yichian@holland.local
+realm discover holland.local
+cat sssd.conf 
+vi sssd.conf 
+systemctl restart sshd
+pam-auth-update
+kinit -V yichian@holland.local
+cd ..
+vi krb5.conf 
+kinit -V yichian@HOLLAND.LOCAL
+kinit -V michael@HOLLAND.LOCAL
+cd ssh
+vi sshd_config
+cd /etc/pam.d
+ls
+cat sshd 
+vi sshd 
+vi /etc/security/access.conf 
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+reboot
+cd /etc/
+ls -lrt krb5.conf 
+ls -lrt krb5*
+cat krb5.conf 
+cd ssh
+vi sshd_config
+cd ../sudoers.d/
+ls
+vi michael@holland.local 
+exit
+cd /etc/sudoers.d/
+ls
+vi michael@holland.local 
+exit
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+cd /etc/sudoers.d/
+mv michael@holland.local michael-holland.local
+exit
+ls -lrt
+id
+cd /etc/sudoers.d
+cat michael-holland.local 
+mv michael-holland.local michael\@holland.local
+exit
+cd /etc/sudoers.d/
+vi michael@holland.local 
+ls -lrt
+exit
+cd /etc/sudoers.d
+ls
+mv michael@holland.local michael-holland.local
+exit
+cd /etc/sudoers.d/
+ls
+cat michael-holland.local 
+vi michael-holland.local 
+exit
+cd /var/log
+tail -f auth.log
+cd /etc/sudoers.d/
+ls
+mv michael-holland.local michael\@holland.local
+cat michael@holland.local 
+mv michael@holland.local holland.local
+vi holland.local 
+usermod -aG sudo holland\michael
+usermod -aG sudo holland.local\michael
+usermod -aG sudo holland\\michael
+vi holland.local 
+export EDITOR=vi
+visudo
+cd /etc/security/
+vi access.conf 
+cd /etc/pam.d
+vi sshd 
+grep Authentication /etc/ssh/sshd_config
+kinit -V admin@HOLLAND.LOCAL
+authconfig
+cd /etc/sudoers.d/
+ls
+cat holland.local 
+exit
+apt update
+apt -y upgrade
+apt -y autoremove
+apt -y autoclean
+exit
+cd /etc/ssh
+vi sshd_config
+systemctl restart sshd
+exit
+cat /etc/sudoers.d/holland.local 
+exit
+cat /etc/sudoers.d/holland.local 
+grep sudo /etc/group
+exit
+cd /etc/sudoers.d
+vi holland.local 
+exit
+cd /etc/sudoers.d
+ls
+cat holland.local 
+exit
+apt-file search klist
+dpkg -L krb5-user
+id
+exit
+vi /etc/ssh/sshd_config
+systemctl restart sshd
+cd /var/log/
+ls -lrt auth.log
+tail -f auth.log
+vi /etc/ssh/sshd_config
+sshd -T
+sshd -T | grep allow
+sshd -T | grep allowusers
+systemctl restart sshd
+exit
+cd /etc/
+cat krb5.conf 
+ls -lrt krb5*
+cat krb5.keytab 
+PuTTY
+cat krb5.conf 
+cd sssd
+ls
+ls -lrt
+ls -lrt conf.d/
+cat /etc/sssd/sssd.conf 
+cd /var/log
+tail -f auth.log
+realm list
+realm discover holland.local
+cd /etc/sssd
+vi sssd.conf 
+systemctl restart sssd
+systemctl restart sssd-nss.socket
+journalctl -xe
+vi sssd.conf 
+systemctl restart sssd-nss.socket
+systemctl restart sssd
+ls -lrt
+cd ..
+ls -lrt | grep sssd
+cd sssd
+ls
+ls -lrt conf.d
+ls
+ls -lrt
+cd /etc/pam.d/
+ls -lrt
+cat common-session
+grep pam_mkhomedir common-session
+apt-file search devolution
+apt-file search Devolution
+dig -t srv_kerberos._udp.dc.holland.local.
+dig -t srv_kerberos._udp.dc.holland.local
+dig -t srv_kerberos._udp.dc.holland.local
+dig -t srv_kerberos._udp.dc.holland.local
+dig -t srv_kerberos._udp.dc.holland.local.
+dig -t srv_kerberos._udp.ad.holland.local
+dig -t srv_kerberos._udp.holland.local
+dig -t srv_kerberos._udp.holland.local
+dig -t srv _kerberos._udp.dc.holland.local
+dig -t srv _ldap._tcp.dc.holland.local
+host -t SRV _kerberos._udp.golinuxcloud.com.
+host -t SRV _ldap._tcp.holland.local.
+host -t SRV _ldap._tcp.dc._msdcs.holland.local
+
+
+man sssd-nss
+man -k nss
+man nss
+ls -lrt /etc/default/nss
+man nss
+ls -lrt /etc/default/nss
+man sssd-ldap
+cd ../sssd/
+ls
+cd /
+find . -name "sssd-ldap" 
+cd
+man sssd.conf
+cd /etc/resolvconf/
+ls
+cd resolv.conf.d
+ls
+vi head 
+resolvconf -u
+cat /etc/resolv.conf 
+realm discover holland.local
+pam-auth-update
+su - admin@holland.local
+systemctl restart sssd
+su - admin@holland.local

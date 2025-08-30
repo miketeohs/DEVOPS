@@ -1,0 +1,5 @@
+https://markaicode.com/ubuntu-networking-comparison/
+
+https://askubuntu.com/questions/1031439/am-i-running-networkmanager-or-networkd
+
+

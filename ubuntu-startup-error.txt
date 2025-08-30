@@ -1,0 +1,6 @@
+https://askubuntu.com/questions/91286/how-to-see-log-to-find-a-boot-problem
+
+journalctl -b
+
+
+/var/log/boot.log or /var/log/dmesg
